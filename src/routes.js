@@ -1,8 +1,12 @@
 // vendors
 const express = require('express');
 
+// locals
+const scheduleController = require('./app/controllers/scheduleController');
+
+
 const routes = express.Router();
 
-routes.get('/', (req, res) => res.json({ msg: 'testing basic routes' }));
+routes.post('/schedule', scheduleController.store);
 
 module.exports = routes;
