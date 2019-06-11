@@ -1,3 +1,5 @@
+const { mongodbUri } = require(`./${process.env.NODE_ENV}`);
+
 module.exports = {
-  uri: process.env.DB_URL,
+  uri: mongodbUri,
 };
