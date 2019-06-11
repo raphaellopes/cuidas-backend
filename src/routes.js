@@ -10,10 +10,8 @@ const scheduleController = require('./app/controllers/scheduleController');
 const routes = express.Router();
 
 // user
-routes.post(
-  '/user',
-  handler(userController.store),
-);
+routes.get('/user/exists', handler(userController.exists));
+routes.post('/user', handler(userController.store));
 
 // schedule
 routes.get('/schedule', handler(scheduleController.list));

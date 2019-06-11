@@ -14,6 +14,18 @@ class UserController {
 
     return res.json(schedule);
   }
+
+  async exists(req, res) {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json(errorMessage('User not exists'));
+    }
+
+    return res.json(user);
+  }
 }
 
 module.exports = new UserController();
