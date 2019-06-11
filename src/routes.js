@@ -16,9 +16,7 @@ routes.post(
 );
 
 // schedule
-routes.post(
-  '/schedule',
-  handler(scheduleController.store),
-);
+routes.get('/schedule', handler(scheduleController.list));
+routes.post('/schedule', handler(scheduleController.store));
 
 module.exports = routes;
