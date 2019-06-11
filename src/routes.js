@@ -18,5 +18,6 @@ routes.post(
 // schedule
 routes.get('/schedule', handler(scheduleController.list));
 routes.post('/schedule', handler(scheduleController.store));
+routes.delete('/schedule/:id', handler(scheduleController.delete));
 
 module.exports = routes;

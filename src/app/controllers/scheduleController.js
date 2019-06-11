@@ -13,6 +13,12 @@ class ScheduleController {
 
     return res.json(schedules);
   }
+
+  async delete(req, res) {
+    await Schedule.findByIdAndDelete(req.params.id);
+
+    return res.send();
+  }
 }
 
 module.exports = new ScheduleController();
