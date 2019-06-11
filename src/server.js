@@ -3,6 +3,7 @@ require('dotenv').config();
 // vendors
 const express = require('express');
 const mongoose = require('mongoose');
+const Youch = require('youch');
 
 // locals
 const routes = require('./routes');
@@ -13,9 +14,10 @@ class App {
     this.express = express();
 
     this.database();
+    this.middlewares();
     this.routes();
 
-    this.middlewares();
+    this.exception();
   }
 
   database() {
@@ -31,6 +33,20 @@ class App {
 
   middlewares() {
     this.express.use(express.json());
+  }
+
+  exception() {
+    this.express.use(async (err, req, res, next) => {
+      if (process.env.NODE_ENV !== 'production') {
+        const youch = new Youch(err);
+
+        return res.json(await youch.toJSON());
+      }
+
+      return res.status(err.status || 500).json({
+        error: 'Internal Server error',
+      });
+    });
   }
 }
 
