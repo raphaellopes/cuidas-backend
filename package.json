@@ -1,0 +1,17 @@
+{
+  "name": "cuidas-teste-api",
+  "version": "1.0.0",
+  "description": "Teste técnico",
+  "main": "index.js",
+  "author": "Raphael Lopes <ph.campanario07@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
