@@ -6,7 +6,8 @@
   "author": "Raphael Lopes <ph.campanario07@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "src/index.js"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
