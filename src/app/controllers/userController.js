@@ -16,7 +16,7 @@ class UserController {
   }
 
   async exists(req, res) {
-    const { email } = req.body;
+    const { email } = req.query;
 
     const user = await User.findOne({ email });
 

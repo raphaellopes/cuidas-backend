@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const Youch = require('youch');
+const cors = require('cors');
 
 // locals
 const routes = require('./routes');
@@ -32,6 +33,7 @@ class App {
   }
 
   middlewares() {
+    this.express.use(cors());
     this.express.use(express.json());
   }
 
