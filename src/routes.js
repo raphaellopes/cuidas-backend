@@ -15,6 +15,7 @@ routes.post('/user', handler(userController.store));
 
 // schedule
 routes.get('/schedule', handler(scheduleController.list));
+routes.get('/schedule/available', handler(scheduleController.available));
 routes.post('/schedule', handler(scheduleController.store));
 routes.delete('/schedule/:id', handler(scheduleController.delete));
 
