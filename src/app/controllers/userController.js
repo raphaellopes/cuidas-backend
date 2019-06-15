@@ -21,7 +21,7 @@ class UserController {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(404).json(errorMessage('User not exists'));
+      return res.send();
     }
 
     return res.json(user);
