@@ -4,6 +4,20 @@ const moment = require('moment');
 // locals
 const Schedule = require('../models/schedule');
 
+const HOURS = [
+  '08:00',
+  '09:00',
+  '10:00',
+  '11:00',
+  '12:00',
+  '13:00',
+  '14:00',
+  '15:00',
+  '16:00',
+  '17:00',
+  '18:00',
+];
+
 class ScheduleController {
   async store(req, res) {
     const schedule = await Schedule.create(req.body);
@@ -32,19 +46,13 @@ class ScheduleController {
       .gte(date.startOf('day').format())
       .lte(date.endOf('day').format());
 
-    const schedule = [
-      '08:00',
-      '09:00',
-      '10:00',
-      '11:00',
-      '12:00',
-      '13:00',
-      '14:00',
-      '15:00',
-      '16:00',
-      '17:00',
-      '18:00',
-    ];
+
+    const schedule = HOURS.filter((time) => {
+      const [hour, min] = time.split(':');
+      const value = date.hour(hour).minute(min).second(0);
+
+      return value.isAfter(moment()) && time;
+    });
 
     const booked = appointments
       .map(a => moment(a.date).format('HH:mm'))
