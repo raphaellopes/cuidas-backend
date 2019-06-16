@@ -1,5 +1,9 @@
+// vendors
+const moment = require('moment');
+
 // locals
 const User = require('../models/user');
+const Schedule = require('../models/schedule');
 const { errorMessage } = require('../utils');
 
 class UserController {
@@ -24,7 +28,14 @@ class UserController {
       return res.send();
     }
 
-    return res.json(user);
+    const schedules = await Schedule.find({
+      user: user._id,
+      date: {
+        $gte: moment().format(),
+      },
+    });
+
+    return res.json({ user, schedules });
   }
 }
 
