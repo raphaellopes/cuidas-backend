@@ -24,7 +24,9 @@ class ScheduleController {
   }
 
   async list(req, res) {
-    const schedules = await Schedule.find();
+    const schedules = await Schedule
+      .find()
+      .populate('user');
 
     return res.json(schedules);
   }
