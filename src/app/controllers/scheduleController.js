@@ -46,7 +46,6 @@ class ScheduleController {
       .gte(date.startOf('day').format())
       .lte(date.endOf('day').format());
 
-
     const schedule = HOURS.filter((time) => {
       const [hour, min] = time.split(':');
       const value = date.hour(hour).minute(min).second(0);
