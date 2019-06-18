@@ -6,7 +6,15 @@ o [teste técnico cuidas frontend](https://github.com/raphaellopes/cuidas-fronte
 ## Para rodar local
 
 Certifique que possui o mongo, node e yarn instalados, clone o repositório.
-Na raiz do projeto, copie o arquivo `.env.example` como `.env` e rode:
+Na raiz do projeto, copie o arquivo `.env.example` como `.env`, e insira um caminho para banco mongo:
+
+```
+NODE_ENV = 'development'
+PORT = 3001
+DATABASE = 'some-mongo-db'
+```
+
+Rode os comandos abaixo:
 
 ### `yarn`
 
