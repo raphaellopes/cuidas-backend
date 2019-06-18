@@ -38,7 +38,7 @@ similar.
 
 ## Rotas disponíveis
 
-### `POST /users`
+### `POST /user`
 
 Salva um novo usuário
 
