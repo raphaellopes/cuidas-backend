@@ -20,7 +20,7 @@ Rode os comandos abaixo:
 
 Para instalar as dependências
 
-### `yarn start`
+### `yarn dev`
 
 Roda o app em modo de desenvolvimento<br>
 Abra [http://localhost:3001](http://localhost:3001) em alguma ferramenta
