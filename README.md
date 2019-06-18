@@ -5,8 +5,9 @@ o [teste técnico cuidas frontend](https://github.com/raphaellopes/cuidas-fronte
 
 ## Para rodar local
 
-Certifique que possui o mongo, node e yarn instalados, clone o repositório.
-Na raiz do projeto, copie o arquivo `.env.example` como `.env`, e insira um caminho para banco mongo:
+Certifique que possui o node e yarn instalados, clone o repositório.
+Na raiz do projeto, copie o arquivo `.env.example` como `.env`, e insira o caminho 
+para um banco mongo:
 
 ```
 NODE_ENV = 'development'
@@ -14,7 +15,14 @@ PORT = 3001
 DATABASE = 'some-mongo-db'
 ```
 
-Rode os comandos abaixo:
+Você pode subir uma instancia com [docker](https://hub.docker.com/_/mongo) 
+caso tenha o docker instalado, mas não é necessário. Você pode conectar com 
+qualquer mongo disponível:
+```
+docker run --name some-mongo-db -d mongo
+```
+
+Após configurar o banco, rode os comandos abaixo para o modo de desenvolvimento:
 
 ### `yarn`
 
@@ -28,7 +36,7 @@ para debugar serviõs rest como o [insomnia](https://insomnia.rest/) ou
 similar.
 
 
-## Rodas disponíveis
+## Rotas disponíveis
 
 ### `POST /users`
 
