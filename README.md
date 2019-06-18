@@ -32,7 +32,7 @@ Para instalar as dependências
 
 Roda o app em modo de desenvolvimento<br>
 Abra [http://localhost:3001](http://localhost:3001) em alguma ferramenta
-para debugar serviõs rest como o [insomnia](https://insomnia.rest/) ou
+para debugar api rest como o [insomnia](https://insomnia.rest/) ou
 similar.
 
 
